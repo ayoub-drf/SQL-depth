@@ -17,3 +17,4 @@ SELECT customer_id, AVG(rental_id) AS rental_average FROM rental GROUP BY custom
 SELECT customer_id, COUNT(rental_id) FROM rental GROUP BY customer_id HAVING COUNT(rental_id) > 33;
 
 
+
