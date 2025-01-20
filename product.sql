@@ -44,4 +44,51 @@ ALTER TABLE product DROP COLUMN img;
 DESCRIBE product;
 
 
-SELECT * FROM product;
+USE my_database;
+
+CREATE TABLE User (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL
+);
+INSERT INTO `User` (username) VALUES ("James"), ("Dexter"), ("Maria"), ("Sara");
+SELECT * FROM `User`;
+
+
+CREATE TABLE Profile (
+    profile_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNIQUE,
+    FOREIGN KEY (user_id) REFERENCES User(user_id)
+);
+INSERT INTO `Profile` (user_id) VALUES (1), (2), (3), (4);
+SELECT * FROM `Profile`;
+
+CREATE TABLE Book (
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    name VARCHAR(100) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES User(user_id)
+);
+ALTER TABLE `Book` MODIFY COLUMN user_id INT NULL;
+
+INSERT INTO `Book` (user_id, name) VALUES (1, "Book 1"), (2,  "Book 2"), (3,  "Book 3"), (4,  "Book 4");
+SELECT * FROM `Book`;
+
+
+CREATE TABLE Author (
+    author_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL
+);
+INSERT INTO `Author` (name) VALUES ("Alex"), ("Victor"), ("Kristina"), ("Suzan");
+SELECT * FROM `Author`;
+
+CREATE TABLE Book_Authors (
+    book_id INT,
+    author_id INT,
+    PRIMARY KEY (book_id, author_id),
+    FOREIGN KEY (book_id) REFERENCES Book(book_id),
+    FOREIGN KEY (author_id) REFERENCES Author(author_id)
+);
+INSERT INTO `Book_Authors` (book_id, author_id) VALUES (1, 2), (1, 3), (1, 4);
+SELECT * FROM `Book_Authors`;
+
+
