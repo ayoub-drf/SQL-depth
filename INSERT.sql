@@ -9,7 +9,7 @@ SHOW COLUMNS FROM t1;
 
 DESC t1;
 
-INSERT INTO t1 VALUES (2, 'James'), (3, 'john');
+INSERT INTO t1 VALUES (2, 'James');
 
 CREATE TABLE t2 LIKE t1;
 
