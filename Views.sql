@@ -1,5 +1,6 @@
 use my_database;
 
+
 CREATE VIEW UserBooks AS SELECT `User`.username, `Book`.name FROM `User`
 LEFT JOIN `Book` USING (user_id);
 SELECT * FROM UserBooks;
