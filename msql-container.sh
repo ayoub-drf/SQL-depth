@@ -1,5 +1,11 @@
 docker run --name mysql-container \
-  -e MYSQL_ROOT_PASSWORD=my-secret-pw \
+  -v $(pwd)/databases:/usr/databases \
+  -e MYSQL_ROOT_PASSWORD=rootpassword \
   -e MYSQL_DATABASE=my_database \
-  -d -p 3306:3306 mysql:latest
-  
+  -d -p 3306:3306 mysql
+
+# mysql -uroot -prootpassword
+
+# source /usr/databases/sakila-db/sakila-schema.sql
+
+# source /usr/databases/sakila-db/sakila-data.sql
