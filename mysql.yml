@@ -16,6 +16,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "mypassword"
 
+
   # mysql-workbench:
   #   image: linuxserver/mysql-workbench:latest
   #   container_name: mysql-workbench

@@ -13,28 +13,6 @@ services:
     volumes:
       - ./databases:/usr/databases
 
-  adminer:
-    image: adminer
-    hostname: pg-adminer
-    container_name: pg-adminer
-    volumes:
-      - ./databases:/usr/databases
-    restart: always
-    ports:
-      - 8080:8080
-
-  jupyter:
-    image: asami76/allspark:latest
-    container_name: jupyter
-    hostname: jupyter
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - ./databases:/home/jovyan/
-    ports:
-      - 8888:8888
-    restart: unless-stopped
 
   pgadmin:
     image: dpage/pgadmin4
@@ -48,5 +26,15 @@ services:
     restart: always
     ports:
       - "5050:80"
+
+  # adminer:
+  #   image: adminer
+  #   hostname: pg-adminer
+  #   container_name: pg-adminer
+  #   volumes:
+  #     - ./databases:/usr/databases
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
 
     
