@@ -2,4 +2,4 @@ sql
 databases/.*
 databases/world-db
 .venv
-
+.env
