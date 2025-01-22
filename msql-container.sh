@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 docker run --name mysql-container \
   -v $(pwd)/databases:/usr/databases \
   -e MYSQL_ROOT_PASSWORD=rootpassword \
