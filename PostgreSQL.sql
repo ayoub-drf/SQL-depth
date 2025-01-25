@@ -78,5 +78,5 @@ create database testdb;
 select current_database();
 
 
-
+SELECT * FROM "User";
 
