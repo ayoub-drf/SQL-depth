@@ -3,3 +3,4 @@ databases/.*
 databases/world-db
 .venv
 .env
+databases/Police_Department_Incident_Reports__Historical_2003_to_May_2018.csv

@@ -50,7 +50,3 @@ ON fm_cy.category_id  = cy.category_id;
 SELECT cy.category_id, cy.name, fm_cy.film_id FROM category AS cy
 INNER JOIN film_category AS fm_cy
 USING (category_id);
-
-
-
-
